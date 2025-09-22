@@ -1,0 +1,23 @@
+/* AOS fade fix - explicit rules to avoid minified selector bugs.
+   This file adds stronger selectors (including doubled attribute selectors)
+   and explicit transition timings so fade animations reliably toggle
+   opacity even when the vendor CSS uses compressed/duplicated selectors. */
+
+/* Targets like [data-aos^="fade"] and minified variants like
+   [data-aos^=fade][data-aos^=fade] to match doubled-attribute selectors */
+[data-aos^="fade"],
+[data-aos*="fade"],
+[data-aos^="fade"][data-aos^="fade"],
+[data-aos*="fade"][data-aos*="fade"] {
+  opacity: 0 !important;
+  transition: opacity .6s ease, transform .6s ease !important;
+  will-change: opacity, transform;
+}
+
+[data-aos^="fade"].aos-animate,
+[data-aos*="fade"].aos-animate,
+[data-aos^="fade"][data-aos^="fade"].aos-animate,
+[data-aos*="fade"][data-aos*="fade"].aos-animate {
+  opacity: 1 !important;
+  transform: translate(0) !important;
+}

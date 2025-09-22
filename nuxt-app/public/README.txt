@@ -1,0 +1,1 @@
+Copy the folders `css`, `js`, `fonts`, `vahag`, `images`, and `favicon.png` from the parent project into this folder so the Nuxt app can use them as static assets.

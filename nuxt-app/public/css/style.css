@@ -17,14 +17,15 @@ body {
   background: #000;
  }
 
-/* Selection background colors */
-::-moz-selection {
+/* Selection background colors commented out to preserve readable selection
+   if the site background changes. Re-enable if you want black selection. */
+/* ::-moz-selection {
   background: #000;
   color: #fff; }
 
 ::selection {
   background: #000;
-  color: #fff; }
+  color: #fff; } */
 
 h1, h2, h3, h4 {
   font-family: "Cardo", serif; }
@@ -54,18 +55,25 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
+    /* By default the overlay is hidden; it is only shown when the
+      off-canvas mobile menu is active. This prevents the overlay from
+      covering content unexpectedly. */
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  pointer-events: none; }
 
-.offcanvas-menu .site-wrap {
+/* When the offcanvas menu is toggled on the body, show the overlay and
+   constrain the site-wrap to the viewport (original behavior). */
+body.offcanvas-menu .site-wrap {
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: 2;
   overflow: hidden; }
-  .offcanvas-menu .site-wrap:before {
-    opacity: 1;
-    visibility: visible; }
+body.offcanvas-menu .site-wrap:before {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; }
 
 .btn {
   border-radius: 0; }
@@ -879,15 +887,14 @@ a {
         opacity: .2; }
 
 .slide-one-item.home-slider .owl-nav {
-  position: absolute !important;
-  top: 50% !important;
-  bottom: auto !important;
-  width: 100%; }
+        /* Selection background colors */
+        ::-moz-selection {
+          background: #000;
+          color: #fff; }
 
-.slide-one-item.home-slider .owl-prev {
-  left: 10px !important; }
-
-.slide-one-item.home-slider .owl-next {
+        ::selection {
+          background: #000;
+          color: #fff; }
   right: 10px !important; }
 
 .slide-one-item.home-slider .owl-prev, .slide-one-item.home-slider .owl-next {

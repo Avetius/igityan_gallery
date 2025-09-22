@@ -1,0 +1,17 @@
+{
+  "name": "igityan-nuxt",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "nuxi start"
+  },
+  "devDependencies": {
+    "nuxt": "^4.0.0",
+    "vue-easy-lightbox": "^1.7.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
+}
