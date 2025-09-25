@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "nuxt": "^4.0.0",
+    "playwright": "^1.55.0",
     "vue-easy-lightbox": "^1.7.0"
   },
   "dependencies": {
